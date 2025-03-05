@@ -20,3 +20,22 @@
 
 4. **Prometheus 指标暴露**：
     - 通过 `/metrics` 端点暴露所有指标，供 Prometheus 抓取。
+
+## 指标说明
+
+以下是项目暴露的主要指标：
+
+| 指标名称                          | 类型      | 描述                                       |
+|-----------------------------------|-----------|--------------------------------------------|
+| `system_load_factor`              | Gauge     | 系统 CPU 负载因子（Goroutine 数量/CPU 核心数） |
+| `system_memory_usage_bytes`       | Gauge     | 系统内存使用情况（堆内存、空闲内存等）       |
+| `last_processed_timestamp`        | Gauge     | 最后处理请求的时间戳                        |
+| `system_goroutines_count`         | Gauge     | 当前运行的 Goroutine 数量                   |
+| `app_requests_total`              | Counter   | 请求总数，按方法、端点和状态分类             |
+| `app_concurrent_requests`         | Gauge     | 当前并发请求数                              |
+| `app_request_duration_seconds`    | Histogram | 请求延迟分布                                |
+
+
+## 许可证
+
+本项目基于 [MIT 许可证](LICENSE) 开源
